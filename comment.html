@@ -1,0 +1,544 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kesavan | Cloud & DevOps Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b1120;
+            color: #e5e7eb;
+            line-height: 1.7;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #111827;
+            padding: 16px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #263244;
+        }
+
+        .logo {
+            color: #38bdf8;
+            font-size: 23px;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #e5e7eb;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        section {
+            padding: 75px 8%;
+            scroll-margin-top: 65px;
+        }
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            background:
+                radial-gradient(ellipse at 80% 20%, #123b59 0%, transparent 45%),
+                #0b1120;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .tag {
+            color: #38bdf8;
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-size: 13px;
+        }
+
+        h1 {
+            font-size: clamp(38px, 6vw, 66px);
+            line-height: 1.2;
+            margin: 18px 0;
+        }
+
+        h1 span, h2 span {
+            color: #38bdf8;
+        }
+
+        .hero h2 {
+            font-size: clamp(22px, 3vw, 32px);
+            margin-bottom: 15px;
+        }
+
+        .hero p, .about-text {
+            color: #aebbd0;
+            max-width: 650px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 11px 22px;
+            background: #0284c7;
+            color: white;
+            border-radius: 7px;
+            text-decoration: none;
+            margin: 6px 8px 6px 0;
+            border: 1px solid #0284c7;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #0369a1;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border-color: #38bdf8;
+        }
+
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .muted {
+            color: #aebbd0;
+        }
+
+        .about-box {
+            background: #111827;
+            padding: 28px;
+            border: 1px solid #263244;
+            border-radius: 12px;
+            max-width: 900px;
+        }
+
+        .skills, .projects {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            padding: 24px;
+            border-radius: 12px;
+            background: #111827;
+            border: 1px solid #263244;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+        }
+
+        .card h3 {
+            color: #38bdf8;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #aebbd0;
+            font-size: 14px;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            padding: 5px 10px;
+            margin: 5px 4px 0 0;
+            border-radius: 5px;
+            background: #1e293b;
+            color: #7dd3fc;
+            font-size: 12px;
+        }
+
+        .timeline {
+            max-width: 800px;
+            border-left: 2px solid #0284c7;
+            padding-left: 25px;
+        }
+
+        .timeline-item {
+            margin-bottom: 25px;
+        }
+
+        .timeline-item h3 {
+            color: #38bdf8;
+        }
+
+        #contact {
+            background: #111827;
+        }
+
+        .contact-links a {
+            display: inline-block;
+            color: #7dd3fc;
+            margin: 10px 18px 0 0;
+            text-decoration: none;
+        }
+
+        .contact-links a:hover {
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 22px;
+            color: #94a3b8;
+            font-size: 13px;
+        }
+
+        @media (max-width: 650px) {
+            header {
+                flex-direction: column;
+                gap: 10px;
+                padding: 14px 4%;
+            }
+
+            nav {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            section {
+                padding: 55px 6%;
+            }
+
+            .hero {
+                min-height: 75vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <div class="logo">Kesavan.</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#learning">Learning</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+
+            <div class="tag">WELCOME TO MY PORTFOLIO</div>
+
+            <h1>
+                Hello, I'm <span>Kesavan</span>
+            </h1>
+
+            <h2>
+                Aspiring Cloud &amp;
+                <span>DevOps Engineer</span>
+            </h2>
+
+            <p>
+                I am currently learning Cloud Computing, AWS and
+                DevOps. I enjoy building cloud-based projects,
+                exploring AWS services and improving my technical
+                skills through hands-on practice.
+            </p>
+
+            <a href="#projects" class="btn">
+                Explore My Projects
+            </a>
+
+            <a href="#contact" class="btn btn-outline">
+                Contact Me
+            </a>
+
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+
+        <h2 class="section-title">
+            About <span>Me</span>
+        </h2>
+
+        <div class="about-box">
+
+            <p class="about-text">
+                Hello! My name is Kesavan. I am an aspiring Cloud
+                and DevOps Engineer currently pursuing my learning
+                journey in cloud computing and related technologies.
+                I am developing practical knowledge of Amazon Web
+                Services (AWS), Linux and Python.
+            </p>
+
+            <p class="about-text">
+                My goal is to understand how applications are
+                deployed, hosted, monitored and maintained in the
+                cloud. I am building hands-on projects to strengthen
+                my technical skills and prepare for entry-level
+                opportunities in Cloud Computing and DevOps.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+
+        <h2 class="section-title">
+            Technical <span>Skills</span>
+        </h2>
+
+        <div class="skills">
+
+            <div class="card">
+                <h3>AWS Cloud</h3>
+
+                <p>
+                    Learning cloud infrastructure, storage,
+                    networking and application deployment.
+                </p>
+
+                <span class="skill-tag">EC2</span>
+                <span class="skill-tag">S3</span>
+                <span class="skill-tag">VPC</span>
+                <span class="skill-tag">IAM</span>
+                <span class="skill-tag">CloudFront</span>
+                <span class="skill-tag">CloudWatch</span>
+                <span class="skill-tag">Lambda</span>
+            </div>
+
+            <div class="card">
+                <h3>DevOps</h3>
+
+                <p>
+                    Developing foundational knowledge of DevOps
+                    tools and software delivery workflows.
+                </p>
+
+                <span class="skill-tag">Linux</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">GitHub</span>
+                <span class="skill-tag">CI/CD - Learning</span>
+            </div>
+
+            <div class="card">
+                <h3>Web Development</h3>
+
+                <p>
+                    Practicing website development and
+                    programming fundamentals.
+                </p>
+
+                <span class="skill-tag">HTML</span>
+                <span class="skill-tag">CSS</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Python - Learning</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+
+        <h2 class="section-title">
+            My <span>Projects</span>
+        </h2>
+
+        <p class="muted" style="margin-bottom: 25px;">
+            AWS and web development projects from my learning journey.
+        </p>
+
+        <div class="projects">
+
+            <div class="card">
+                <h3>01. Static Website Hosting</h3>
+
+                <p>
+                    Building an HTML website hosted on Amazon S3
+                    and learning how CloudFront delivers website
+                    content securely and efficiently.
+                </p>
+
+                <span class="skill-tag">Amazon S3</span>
+                <span class="skill-tag">CloudFront</span>
+                <span class="skill-tag">HTML</span>
+            </div>
+
+            <div class="card">
+                <h3>02. EC2 and VPC</h3>
+
+                <p>
+                    Practicing virtual server deployment, VPC
+                    networking, security groups and connectivity
+                    between AWS resources.
+                </p>
+
+                <span class="skill-tag">EC2</span>
+                <span class="skill-tag">VPC</span>
+                <span class="skill-tag">Security Groups</span>
+            </div>
+
+            <div class="card">
+                <h3>03. Cloud Monitoring</h3>
+
+                <p>
+                    Learning how CloudWatch logs and monitoring
+                    help track AWS resources and investigate
+                    application and infrastructure issues.
+                </p>
+
+                <span class="skill-tag">CloudWatch</span>
+                <span class="skill-tag">EC2</span>
+                <span class="skill-tag">Monitoring</span>
+            </div>
+
+            <div class="card">
+                <h3>04. Calculator Website</h3>
+
+                <p>
+                    Creating a responsive calculator website
+                    using HTML, CSS and JavaScript and exploring
+                    static website hosting with Amazon S3.
+                </p>
+
+                <span class="skill-tag">HTML</span>
+                <span class="skill-tag">CSS</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">S3</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Learning Section -->
+    <section id="learning">
+
+        <h2 class="section-title">
+            Education &amp; <span>Learning</span>
+        </h2>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+                <h3>Cloud Computing</h3>
+
+                <p class="muted">
+                    Studying cloud concepts, AWS services,
+                    cloud architecture and practical deployment.
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <h3>DevOps Fundamentals</h3>
+
+                <p class="muted">
+                    Learning Linux, automation concepts,
+                    version control and software delivery practices.
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <h3>Python Programming</h3>
+
+                <p class="muted">
+                    Developing programming fundamentals and
+                    exploring Python for cloud automation.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+
+        <h2 class="section-title">
+            Let's <span>Connect</span>
+        </h2>
+
+        <p class="muted">
+            I am interested in entry-level Cloud and DevOps
+            opportunities. Feel free to connect with me.
+        </p>
+
+        <div class="contact-links">
+
+            <!-- Replace the example links with your real profiles -->
+            <a href="https://www.linkedin.com/"
+               target="_blank"
+               rel="noopener noreferrer">
+                LinkedIn Profile
+            </a>
+
+            <a href="https://github.com/"
+               target="_blank"
+               rel="noopener noreferrer">
+                GitHub Profile
+            </a>
+
+            <!-- Replace with your actual email address -->
+            <a href="mailto:your.email@example.com">
+                Email Me
+            </a>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            &copy; <span id="year"></span>
+            Kesavan | Cloud &amp; DevOps Portfolio
+        </p>
+
+        <p>Built with HTML, CSS and JavaScript.</p>
+    </footer>
+
+    <!-- Automatic current year -->
+    <script>
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>
